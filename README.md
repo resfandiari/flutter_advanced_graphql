@@ -1,6 +1,6 @@
 # flutter_advanced_graphql
 
-It is a demo of Clean Architecture with GraphQL using an advanced tool in Flutter.
+Demonstration of Clean Architecture with GraphQL using Flutter's advanced tools.
 
 ## Goal
 - generate dart types and classes which covers GraphQL API queries
