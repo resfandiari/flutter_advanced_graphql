@@ -1,0 +1,216 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+}
+
+directive @fake(locale: fake__Locale, options: fake__options = {dateFormat: "YYYY-MM-DDTHH:mm:ss[Z]", dateFrom: "2010-01-01", dateTo: "2030-01-01", baseColor: {red255: 0, green255: 0, blue255: 0}}, type: fake__Types!) on SCALAR | FIELD_DEFINITION
+
+directive @listLength(max: Int!, min: Int!) on FIELD_DEFINITION
+
+directive @examples(values: [examples__JSON]!) on SCALAR | FIELD_DEFINITION
+
+type Company {
+    employees: [Employee!]
+    id: ID
+    industry: String
+    name: String
+}
+
+type Employee {
+    address: String
+    company: Company
+    firstName: String
+    id: ID
+    lastName: String
+    subordinates: [Employee!]
+}
+
+type Query {
+    allCompanies: [Company!]
+    company(id: ID): Company
+    employee(id: ID): Employee
+}
+
+enum fake__Locale {
+    az
+    cz
+    de
+    de_AT
+    de_CH
+    en
+    en_AU
+    en_BORK
+    en_CA
+    en_GB
+    en_IE
+    en_IND
+    en_US
+    en_au_ocker
+    es
+    es_MX
+    fa
+    fr
+    fr_CA
+    ge
+    id_ID
+    it
+    ja
+    ko
+    nb_NO
+    nep
+    nl
+    pl
+    pt_BR
+    ru
+    sk
+    sv
+    tr
+    uk
+    vi
+    zh_CN
+    zh_TW
+}
+
+enum fake__Types {
+    "An URL for an avatar"
+    avatarUrl
+    bankIdentifierCode
+    bitcoinAddress
+    city
+    "Configure color with option: `baseColor`"
+    colorHex
+    colorName
+    companyBS
+    companyCatchPhrase
+    companyName
+    country
+    countryCode
+    county
+    currencyCode
+    currencyName
+    currencySymbol
+    """
+
+    By default returns dates beetween 2000-01-01 and 2030-01-01.
+    Configure date format with options `dateFormat` `dateFrom` `dateTo`.
+    """
+    date
+    dbCollation
+    dbColumn
+    dbEngine
+    dbType
+    domainName
+    "Configure email provider with option: `emailProvider`"
+    email
+    fileExtension
+    filename
+    financeAccountName
+    financeTransactionType
+    firstName
+    fullName
+    "Configure date format with option `dateFormat`"
+    futureDate
+    hackerAbbreviation
+    hackerPhrase
+    "An image url. Configure image with options: `imageCategory`, `imageWidth`, `imageHeight` and `randomizeImageUrl`"
+    imageUrl
+    internationalBankAccountNumber
+    ipv4Address
+    ipv6Address
+    jobTitle
+    lastName
+    latitude
+    locale
+    longitude
+    "Lorem Ipsum text. Configure size with option `loremSize`"
+    lorem
+    macAddress
+    mimeType
+    "Sum of money. Configure with options `minMoney`/`maxMoney` and 'decimalPlaces'."
+    money
+    number
+    "Configure password with option `passwordLength`"
+    password
+    "Configure date format with option `dateFormat`"
+    pastDate
+    phoneNumber
+    product
+    productCategory
+    productMaterial
+    productName
+    "Configure date format with option `dateFormat`"
+    recentDate
+    secondaryAddress
+    semver
+    state
+    stateAbbr
+    "Configure address with option `useFullAddress`"
+    streetAddress
+    streetName
+    url
+    userAgent
+    uuid
+    word
+    words
+    zipCode
+}
+
+enum fake__loremSize {
+    paragraph
+    paragraphs
+    sentence
+    sentences
+    word
+    words
+}
+
+scalar examples__JSON
+
+input fake__color {
+    blue255: Int = 0
+    green255: Int = 0
+    red255: Int = 0
+}
+
+input fake__imageSize {
+    height: Int!
+    width: Int!
+}
+
+input fake__options {
+    "Only for type `colorHex`. [Details here](https://stackoverflow.com/a/43235/4989887)"
+    baseColor: fake__color = {red255: 0, green255: 0, blue255: 0}
+    "Only for types `*Date`. Example value: `YYYY MM DD`. [Full Specification](http://momentjs.com/docs/#/displaying/format/)"
+    dateFormat: String = "YYYY-MM-DDTHH:mm:ss[Z]"
+    "Only for types `betweenDate`. Example value: `1986-11-02`."
+    dateFrom: String = "2010-01-01"
+    "Only for types `betweenDate`. Example value: `2038-01-19`."
+    dateTo: String = "2030-01-01"
+    "Only for type `money`"
+    decimalPlaces: Int
+    "Only for type `email`"
+    emailProvider: String
+    "Only for type `imageUrl`. Example value: `[\"nature\", \"water\"]`."
+    imageKeywords: [String!]
+    "Only for type `imageUrl`"
+    imageSize: fake__imageSize
+    "Only for type `lorem`"
+    loremSize: fake__loremSize
+    "Only for type `money`"
+    maxMoney: Float
+    "Only for type `number`"
+    maxNumber: Float
+    "Only for type `money`"
+    minMoney: Float
+    "Only for type `number`"
+    minNumber: Float
+    "Only for type `password`"
+    passwordLength: Int
+    "Only for type `number`"
+    precisionNumber: Float
+    "Only for type `imageUrl`"
+    randomizeImageUrl: Boolean
+    "Only for type `streetAddress`"
+    useFullAddress: Boolean
+}

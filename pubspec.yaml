@@ -1,0 +1,48 @@
+name: flutter_advanced_graphql
+description: A new Flutter project.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.1 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  # Graphql
+  artemis: ^7.7.0-beta
+  gql: ^0.13.1-alpha
+  gql_link: ^0.4.3-alpha+1651654920763
+  gql_http_link: ^0.4.2
+  http_interceptor: ^1.0.2
+  http: ^0.13.4
+  # Discover network
+  connectivity: ^3.0.6
+  # Compare objects
+  equatable: ^2.0.3
+  # Bloc
+  bloc: ^8.0.3
+  meta: ^1.7.0
+  flutter_bloc: ^8.0.1
+  # Functional programming
+  dartz: ^0.10.1
+  # Code generator
+  freezed_annotation: ^2.0.3
+  json_annotation: ^4.5.0
+  json_serializable: ^6.2.0
+  # Service locator
+  get_it: ^7.2.0
+  injectable: ^1.5.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  build_runner: ^2.1.4
+  freezed: ^2.0.3+1
+  # DI Generator
+  injectable_generator: ^1.5.3
+
+flutter:
+  uses-material-design: true
